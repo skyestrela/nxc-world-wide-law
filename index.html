@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sterling & Associates | Solicitors</title>
+<style>
+  /* LAYOUT A: Full-width hero banner + alternating zigzag sections + floating CTA */
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#2c2c2c;background:#f8f8f8}
+  nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,42,58,0.95);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+  nav .logo{color:#c9a84c;font-size:1.4rem;font-weight:700;letter-spacing:1px}
+  nav ul{list-style:none;display:flex;gap:2rem}
+  nav a{color:#e8e8e8;text-decoration:none;font-size:.9rem;text-transform:uppercase;letter-spacing:1px}
+  nav a:hover{color:#c9a84c}
+  .hero{background:linear-gradient(135deg,#1a2a3a 0%,#2c4a5a 50%,#1a3a4a 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-content{text-align:center;color:#fff;padding:2rem}
+  .hero-content h1{font-size:3.5rem;margin-bottom:.5rem;font-weight:300;letter-spacing:3px}
+  .hero-content h1 span{color:#c9a84c;font-weight:700}
+  .hero-content p{font-size:1.2rem;max-width:600px;margin:1rem auto 2rem;line-height:1.8;opacity:.85}
+  .hero-cta{display:inline-block;background:#c9a84c;color:#1a2a3a;padding:1rem 3rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;transition:all .3s;border:2px solid #c9a84c}
+  .hero-cta:hover{background:transparent;color:#c9a84c}
+
+  .zigzag{padding:5rem 2rem}
+  .zigzag-section{max-width:1100px;margin:0 auto 5rem;display:flex;align-items:center;gap:4rem}
+  .zigzag-section:nth-child(even){flex-direction:row-reverse}
+  .zigzag-icon{flex:0 0 120px;height:120px;background:#1a2a3a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#c9a84c}
+  .zigzag-text h2{font-size:1.8rem;color:#1a2a3a;margin-bottom:1rem;letter-spacing:1px}
+  .zigzag-text p{line-height:1.8;color:#555}
+
+  .stats-bar{background:#1a2a3a;padding:3rem 2rem;display:flex;justify-content:center;gap:5rem;flex-wrap:wrap}
+  .stat{text-align:center;color:#fff}
+  .stat-num{font-size:2.5rem;color:#c9a84c;font-weight:700}
+  .stat-label{font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-top:.5rem}
+
+  .cta-floating{position:fixed;bottom:2rem;right:2rem;background:#c9a84c;color:#1a2a3a;padding:1rem 2rem;text-decoration:none;font-weight:700;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:50;text-transform:uppercase;letter-spacing:1px;font-size:.85rem;transition:transform .3s}
+  .cta-floating:hover{transform:scale(1.05)}
+
+  .testimonials{background:#eef2f5;padding:5rem 2rem;text-align:center}
+  .testimonials h2{font-size:2rem;color:#1a2a3a;margin-bottom:3rem;letter-spacing:1px}
+  .testimonial-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+  .testimonial-card{background:#fff;padding:2rem;border-left:4px solid #c9a84c;text-align:left}
+  .testimonial-card p{font-style:italic;line-height:1.7;margin-bottom:1rem;color:#444}
+  .testimonial-card .author{font-weight:700;color:#1a2a3a;font-size:.9rem}
+
+  footer{background:#111;color:#888;padding:3rem 2rem;text-align:center;font-size:.85rem;line-height:1.8}
+
+  @media(max-width:768px){
+    .hero-content h1{font-size:2rem}
+    .zigzag-section{flex-direction:column!important;text-align:center;gap:1.5rem}
+    .stats-bar{gap:2rem}
+    nav ul{display:none}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">STERLING & ASSOCIATES</div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>STERLING <span>&</span> ASSOCIATES</h1>
+    <p>Trusted legal counsel for individuals and businesses across London. Decades of expertise, a reputation for results.</p>
+    <a href="tel:02071311065" class="hero-cta">Call 020 7131 1065</a>
+  </div>
+</section>
+
+<section class="zigzag" id="services">
+  <div class="zigzag-section">
+    <div class="zigzag-icon">&#9878;</div>
+    <div class="zigzag-text">
+      <h2>Property & Conveyancing</h2>
+      <p>From first-time buyer to commercial portfolio, we guide you through every transaction with precision and care. Our conveyancing team handles hundreds of completions each year.</p>
+    </div>
+  </div>
+  <div class="zigzag-section">
+    <div class="zigzag-icon">&#9877;</div>
+    <div class="zigzag-text">
+      <h2>Family Law</h2>
+      <p>Divorce, custody disputes, and financial settlements handled with sensitivity and resolve. We fight for fair outcomes while minimising the emotional toll on your family.</p>
+    </div>
+  </div>
+  <div class="zigzag-section">
+    <div class="zigzag-icon">&#9878;</div>
+    <div class="zigzag-text">
+      <h2>Employment disputes</h2>
+      <p>Unfair dismissal, workplace discrimination, and settlement agreements. We represent both employees and employers with equal rigour and commitment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar" id="about">
+  <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Years in Practice</div></div>
+  <div class="stat"><div class="stat-num">2000+</div><div class="stat-label">Cases Won</div></div>
+  <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Client Satisfaction</div></div>
+  <div class="stat"><div class="stat-num">15</div><div class="stat-label">Specialist Solicitors</div></div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"Sterling & Associates made an incredibly stressful property purchase feel straightforward. Professional and always available."</p>
+      <div class="author">— J. Thompson, Lewisham</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"Their family law team was compassionate yet tenacious. I felt supported through every step of my case."</p>
+      <div class="author">— M. Clarke, Southwark</div>
+    </div>
+    <div class="testimonial-card">
+      <p>"Quick response times, clear advice, and a genuine commitment to getting the best result."</p>
+      <div class="author">— R. Patel, Greenwich</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Sterling & Associates Solicitors &bull; London</p>
+  <p>Phone: 020 7131 1065 &bull; Mon-Fri 9am-6pm</p>
+  <p>&copy; 2026 Sterling & Associates. All rights reserved.</p>
+</footer>
+
+<a href="tel:02071311065" class="cta-floating">&#9742; Call Now</a>
+</body>
+</html>
